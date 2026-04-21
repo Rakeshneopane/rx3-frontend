@@ -13,7 +13,7 @@ export default function CLassView() {
     dispatch(setFilter("All"));
     dispatch(setSortBy("name"));
     if (students.length === 0) dispatch(fetchStudents());
-  }, []);
+  }, [dispatch, students.length]);
 
   const filteredStudents = students.filter((student) => {
     if (filter === "All" || filter === "") return true;

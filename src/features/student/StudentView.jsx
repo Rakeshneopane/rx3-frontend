@@ -12,7 +12,7 @@ export default function StudentView() {
   console.log("fetched Students: ", students, "typeof: ", typeof students);
   useEffect(() => {
     dispatch(fetchStudents());
-  }, []);
+  }, [dispatch]);
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-4">
       {status === "loading" && (

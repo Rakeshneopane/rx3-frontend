@@ -26,7 +26,7 @@ export default function SchoolView() {
 
   useEffect(() => {
     if (students.length === 0) dispatch(fetchStudents());
-  }, []);
+  }, [dispatch, students.length]);
 
   useEffect(() => {
     const totalStudents = students.length;
@@ -44,7 +44,7 @@ export default function SchoolView() {
       updateSchoolStats({ totalStudents, averageAttendance, averageMarks })
     );
     dispatch(setTopStudent(topStudent));
-  }, [students]);
+  }, [students, dispatch]);
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-4">
       <div className="max-w-4xl mx-auto">
