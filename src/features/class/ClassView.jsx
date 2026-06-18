@@ -68,22 +68,24 @@ export default function CLassView() {
         </div>
 
         <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
-          <ul>
-            {" "}
-            {sortedStudents.map((student, index) => (
-              <li
-                key={student._id}
-                className="flex items-center justify-between px-4 py-3 border-b border-gray-100 last:border-none text-sm text-gray-700"
-              >
-                {" "}
-                <span className="font-medium text-gray-800">{student.name}</span>
-                <span className="text-gray-400 capitalize">{student.gender}</span>
-                <span className="text-gray-600">Marks: {student.marks}</span>
-                <span className="text-gray-600">Attendance: {student.attendance}</span>{" "}
-              </li>
-            ))}{" "}
-          </ul>
-        </div>
+    {/* Header */}
+    <div className="flex justify-between items-center px-4 py-2 bg-gray-50 border-b border-gray-200 text-xs font-semibold text-gray-500 uppercase tracking-wide">
+        <span className="w-40">Name</span>
+        <span className="w-24">Gender</span>
+        <span className="w-28">Marks</span>
+        <span className="w-32">Attendance</span>
+    </div>
+    <ul>
+        {sortedStudents.map((student) => (
+            <li className="flex justify-between items-center px-4 py-3 border-b border-gray-100 last:border-none text-sm text-gray-700">
+                <span className="w-40 font-medium text-gray-800">{student.name}</span>
+                <span className="w-24 text-gray-400 capitalize">{student.gender}</span>
+                <span className="w-28 ps-4 text-gray-600">{student.marks}</span>
+                <span className="w-32 ps-8 text-gray-600">{student.attendance}</span>
+            </li>
+        ))}
+    </ul>
+</div>
 
       </div>
     </div>
